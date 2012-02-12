@@ -1,0 +1,250 @@
+
+/* Reflect by simurai.com  */
+
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:bold);
+
+html {
+	font: 62.5%/1 "Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
+	
+	background-color: 	#e9ebf4;	
+	background: 		url(bg_glow.png) no-repeat fixed center -300px,
+						url(bg_top.png) repeat-x fixed center top,
+						url(bg.png) repeat fixed 0 0;
+}
+
+body {
+	text-align: center;
+}
+
+#wrapper {
+	padding: 10% 0 15% 0;
+}
+
+
+/* ----------- start
+here it gets interesting */
+
+
+.item {
+	position: 				relative;
+	display: 				inline-block;
+	-webkit-perspective: 	200;
+}
+
+.item .stars {
+			
+	position: 	absolute;
+	text-align: center;	
+	color: 		transparent;
+	z-index: 	-1;
+	bottom: 	0px;
+	
+	-webkit-user-select: none;
+}
+
+.stars .star {
+	font-size: .3em;
+}
+
+/* 3D positioning */
+
+.item:nth-child(1) a { -webkit-transform: translateZ(-50px) rotateY(20deg);		-webkit-filter: grayscale(1) blur(1px); }
+.item:nth-child(2) a { -webkit-transform: translateZ(-120px) rotateY(10deg);	-webkit-filter: grayscale(1) blur(2px); }
+.item:nth-child(3) a { -webkit-transform: translateZ(-150px) rotateY(0deg);		-webkit-filter: grayscale(1) blur(3px); }
+.item:nth-child(4) a { -webkit-transform: translateZ(-120px) rotateY(-10deg);	-webkit-filter: grayscale(1) blur(2px); }
+.item:nth-child(5) a { -webkit-transform: translateZ(-50px) rotateY(-20deg);	-webkit-filter: grayscale(1) blur(1px); }
+
+.item:nth-child(1) a img { padding-left: 10px; 	}
+.item:nth-child(2) a img { padding-left: 6px; 	margin: 0 2px; 	}
+.item:nth-child(3) a img { padding: 0px; 		margin: 0 5px;	}
+.item:nth-child(4) a img { padding-right: 6px; 	margin: 0 2px;	}
+.item:nth-child(5) a img { padding-right: 10px; 	}
+
+
+.item a {
+	display: inline-block;
+	-webkit-box-reflect: 	below 0px -webkit-gradient(linear, left top, left bottom, 
+							from(transparent), color-stop(0.6, transparent), to( rgba(255,255,255,0.15) ));
+	
+	-webkit-transition: 	-webkit-transform .5s cubic-bezier(.24, .16, .12, 1); 
+	-webkit-transition: 	-webkit-transform .5s cubic-bezier(.24, .16, .12, 1), 
+							-webkit-filter .5s cubic-bezier(.24, .16, .12, 1);
+}
+
+/* DVD case */
+
+.item a .case {
+	position: 	relative;
+	display: 	block;
+	width: 		100%;
+	height: 	100%;
+	-webkit-transition: -webkit-transform .5s cubic-bezier(.27, .06, .17, .99);	
+}
+.item a .case:before {
+	content: 	"";
+	position: 	absolute; 
+    width: 		95%;
+    height: 	100%;
+    top: 		0;
+    z-index: 	1;
+	
+	border-radius: 		8px / 3px;
+	-webkit-box-shadow: inset #fff 0 0 2px, inset rgba(255,255,255,.3) 0 0 20px;
+	
+    background-image: 		-webkit-gradient(linear, left top, right bottom, from( rgba(255,255,255,.1) ), to( rgba(255,255,255,0) ),
+    						color-stop(.5, rgba(255,255,255,.25)), color-stop(.51, rgba(255,255,255,0)) );
+    						
+}
+
+.item:nth-child(1) .case:before { left: 5.5%; }
+.item:nth-child(2) .case:before { left: 4.5%; }
+.item:nth-child(3) .case:before { left: 3%; }
+.item:nth-child(4) .case:before { left: 1.5%; }
+.item:nth-child(5) .case:before { left: 0%; }
+
+
+/* cover image */
+
+.item img { 
+	display: 			block;
+	background-color: 	#222;
+	border-radius: 		12px / 6px;	
+	background-image: -webkit-gradient(linear, left top, left bottom, from( rgba(255,255,255,.5)), to( rgba(255,255,255,0)) );
+}
+
+
+
+
+/* ----------- hover */
+.item a:hover { 
+	cursor: crosshair;
+}
+.item a:hover .case {
+	-webkit-transform: translateY(-20px);
+	-webkit-transition: -webkit-transform .1s cubic-bezier(.27, .06, .17, .99);
+}
+
+/* 3D transforms are still a bit funky
+.item:nth-child(1) a:hover .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(-4deg) rotateX(10deg); }
+.item:nth-child(2) a:hover .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(-2deg) rotateX(10deg); }
+.item:nth-child(3) a:hover .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(0deg) rotateX(10deg); }
+.item:nth-child(4) a:hover .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(2deg) rotateX(10deg); }
+.item:nth-child(5) a:hover .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(4deg) rotateX(10deg); }
+*/
+
+
+/* ----------- active */
+.item a:active .case {
+	-webkit-transform: translateY(-20px) scale(.9);
+	-webkit-transition: -webkit-transform .1s ease-out;
+}
+
+/* 3D transforms are still a bit funky
+.item:nth-child(1) a:active .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(-4deg) rotateX(10deg) scale(.9); }
+.item:nth-child(2) a:active .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(-2deg) rotateX(10deg) scale(.9); }
+.item:nth-child(3) a:active .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(0deg) rotateX(10deg) scale(.9); }
+.item:nth-child(4) a:active .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(2deg) rotateX(10deg) scale(.9); }
+.item:nth-child(5) a:active .case { -webkit-transform: perspective(300) translateY(-20px) rotateZ(4deg) rotateX(10deg) scale(.9); }
+*/
+
+
+/* ----------- :target 
+Here all the styles that get applied after a movie gets clicked*/
+
+
+.item:target a {
+	position: 			relative;
+	z-index: 			1;
+	-webkit-transform: 	translateZ(0px);
+	-webkit-filter: grayscale(0) blur(0);
+	-webkit-transition: -webkit-transform .2s cubic-bezier(.24, .16, .12, 1), -webkit-filter .2s ease-out;
+}
+.item:target a img {
+	margin: 	0 5px;
+	padding: 	0;
+	-webkit-border-radius: 6px / 4px;
+}
+
+.item:target a .case:before {
+	width: 	93.5%;
+	height: 99.5%;
+	left: 	6px;
+	top: 	1px;
+}
+
+/* hover */
+.item:target a:hover{ cursor: default; }
+.item:target a:hover .case { -webkit-transform: none;}
+
+
+
+/* stars */
+
+.item:target .stars {
+	font: 		10em/1em 'Vollkorn', serif;
+	display: 	block;
+	position: 	absolute;
+	z-index: 	10;
+	width: 		100%;
+	top: 		auto;
+
+	color: 						hsl(52, 100%, 50%);
+	-webkit-text-fill-color: 	transparent;
+	-webkit-text-stroke: 		#fff 3px;
+	-webkit-background-clip: 	text;
+	background-color: 			hsl(52, 100%, 50%);
+	background-image: 	-webkit-gradient(radial, 0% 0, 50, 100% 0, 20, from( rgba(255,255,255,.2) ), to( rgba(255,255,255,0.6) )), 
+						url(noise.png);
+	
+	-webkit-user-select: 	text;
+	-webkit-transition: 	-webkit-transform .2s ease-out;
+
+	-webkit-box-reflect: below -70px -webkit-gradient(linear, left top, left bottom, 
+		from(transparent), color-stop(0.2, transparent), to( rgba(255,255,255,0.3) ));
+}
+
+.item:target:nth-child(1) .stars { -webkit-transform: translateX(60px) translateY(150px); }
+.item:target:nth-child(2) .stars { -webkit-transform: translateX(40px) translateY(150px); }
+.item:target:nth-child(3) .stars { -webkit-transform: translateY(150px); }
+.item:target:nth-child(4) .stars { -webkit-transform: translateX(-40px) translateY(150px); }
+.item:target:nth-child(5) .stars { -webkit-transform: translateX(-60px) translateY(150px); }
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- end
+
+below just the usual stuff */
+
+strong {
+	font-weight: bold;
+	color: #000;
+}
+
+#meta {
+	color: #777;
+	font-size: 1.2em;
+	line-height: .8em;
+	margin: 30px 0;
+	text-align: center;
+	text-shadow: rgba(255,255,255,0.5) 0 1px 0;	
+} 
+#meta p {
+	margin-bottom: 10px;
+}
+#meta a {
+	text-decoration: none;
+	color: #7276ff;
+}
+#meta a:hover {
+	color: rgba(114,118,255,0.5);
+}
+

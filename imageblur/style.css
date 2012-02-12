@@ -1,0 +1,118 @@
+
+/* CSS3 Image Blur by simurai.com  */
+
+
+html {
+	background: url(http://files.simurai.com/tumblr/img/bg_glow.png) no-repeat fixed center center,
+				url("http://files.simurai.com/tumblr/img/bg.gif") repeat fixed 0 0;
+	font: 62.5%/1 "Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
+}
+
+
+
+/* here it gets interesting */
+
+#wrapper {
+	-webkit-perspective: 500;
+	width: 106px;
+	margin: 100px auto;
+}
+
+#wrapper img {
+	position: absolute;
+	opacity: .18;
+	-webkit-transform: scale(0.99);
+}
+
+#wrapper img:nth-child(1) { 
+	padding: 3px; 	opacity: 0;
+}
+
+#wrapper img:nth-child(2) { padding: 0 3px 6px; 	}
+#wrapper img:nth-child(3) { padding: 6px 3px 0; 	}
+#wrapper img:nth-child(4) { padding: 3px 6px 3px 0; }
+#wrapper img:nth-child(5) { padding: 3px 0 3px 6px; }
+
+#wrapper img:nth-child(6) { padding: 2px 3px 4px; 	}
+#wrapper img:nth-child(7) { padding: 4px 3px 2px; 	}
+#wrapper img:nth-child(8) { padding: 3px 4px 3px 2px; }
+#wrapper img:nth-child(9) { padding: 3px 2px 3px 4px; }
+
+#wrapper img:nth-child(2),
+#wrapper img:nth-child(3),
+#wrapper img:nth-child(4),
+#wrapper img:nth-child(5) 
+{ opacity: 0.12; }
+
+/* hover */
+
+#wrapper:hover img {
+	opacity: 0;
+	-webkit-transition: opacity .3s ease-out;
+}
+#wrapper:hover img:nth-child(1) {
+	opacity: 1;
+	-webkit-transform: scale(1);
+}
+
+
+
+
+/* below just the usual stuff */
+
+strong {
+	font-weight: bold;
+	color: #000;
+}
+
+#meta {
+	width: 100%;
+	color: #777;
+	font-size: 1.2em;
+	-webkit-font-smoothing: antialiased;
+	z-index: 99;
+	bottom: 15%;
+	text-align: center;
+	text-shadow: rgba(255,255,255,0.5) 0 1px 0;
+	position: absolute;
+} 
+
+#meta a {
+	text-decoration: none;
+	color: #7276ff;
+}
+#meta a:hover {
+	color: rgba(114,118,255,0.5);
+}
+
+
+#simurai {
+	width: 100px;
+	height: 300px;
+	position: fixed;
+	z-index: 88;
+	bottom: 60px;
+	right: 40px;
+	opacity: 0.1;
+}
+#simurai:hover {
+	opacity: 1;
+}
+
+
+/* Love */
+
+#love {
+	padding: 10px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset rgba(0,0,0,0.15) 0 1px 2px;
+	border-radius: 0 10px 0 0;
+	opacity: .33;
+}
+#love:hover { opacity: 1; }
+#love * { padding-right: 10px; }
+#love *:last-child { padding-right: 2px; }
+

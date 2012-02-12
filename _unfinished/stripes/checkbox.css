@@ -1,0 +1,84 @@
+
+
+/* striped checkbox by simurai.com */
+
+
+/* ----------- Checkbox */
+
+
+.striped {
+	-webkit-appearance:none;	/* Remove Safari default */
+	position: absolute;
+	z-index: 	1;
+	
+	width: 100px;
+	height:80px;
+	
+	-webkit-box-sizing: content-box;
+	
+	background-color: transparent;
+    -webkit-background-size: 2px;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, 
+						color-stop(.5, transparent), color-stop(.5, #000 ));
+	
+	-webkit-transition: margin-top    1.2s cubic-bezier(0,.2, .2,1),
+						-webkit-border-radius 1.2s cubic-bezier(0,.2, .2,1),
+						-webkit-background-size .1s linear;
+}
+
+
+
+
+.striped:before, .striped:after {
+	font: 50px/70px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	
+	text-align: 	center;
+	
+	position: 	fixed;
+	z-index: 	2;
+    
+    width: 			100px;
+	height: 		80px;
+		
+	color: transparent;
+	-webkit-background-clip: text;
+	-webkit-background-size: 2px;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, #000), color-stop(.5, transparent));
+}
+
+.striped:before {
+	content: 	attr(data-icon-Y);
+	top: 130px;
+}
+
+.striped:after {
+	content: 	attr(data-icon-N);
+	top: 200px;
+}
+
+
+/* ----------- checked/unchecked */
+
+
+/* checked */
+.striped:checked {
+	margin-top: -80px;
+	border-radius: 100px 100px 20px 20px / 140px 140px 20px 20px;
+}
+
+/* unchecked */
+.striped {
+	border-radius: 20px 20px 100px 100px / 20px 20px 140px 140px;
+}
+
+
+/* ----------- hover/active */
+
+.striped:hover {
+	cursor: pointer;
+	-webkit-background-size: 4px;
+}
+
+.striped:active {
+	-webkit-background-size: 12px;
+}

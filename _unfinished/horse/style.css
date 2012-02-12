@@ -1,0 +1,14 @@
+html {
+	background: #1a1a1a url(bg.jpg) no-repeat fixed center top;
+}
+
+#grid {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: url(grid.gif) repeat-x;
+}
+
+#horse {
+	margin: 0 100%;
+}

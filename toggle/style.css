@@ -1,0 +1,254 @@
+
+/* 
+	:toggle by simurai
+	this has a lot of additional styling, if you're looking for the core functionality, head over to http://jsfiddle.net/simurai/CMrJG/
+
+*/
+
+
+/* globals */
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
+
+html {
+	font:62.5%/1 "Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	background: url(bg.png);
+}
+
+body {
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	background: url(dots.png) repeat-x fixed;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a { text-decoration: none; }
+a:active { outline: none; }
+
+h1, h2 {
+	text-shadow: rgba(255,255,255,0.6) 0 1px 0, rgba(0,0,0,0.2) 0 .15em .25em;
+}
+h1 {
+	font-size: 2.9em;
+	font-weight: bold;
+	margin-bottom: .7em;	
+}
+h2 {
+	font-size: 1.8em;
+}
+h2, p {
+	margin-bottom: 1em;
+	line-height: 1.6em;
+}
+p{
+	font-size: 1.3em;
+	color: #333;
+}
+
+
+
+
+
+
+/* article */
+
+article {
+	position: relative;
+	padding: 50px 60px 40px 60px;
+	
+	text-shadow: hsla(0,0%,100%,.7) 0 1px 0;
+	text-align: left;
+	
+	border: 0;
+	border-left: 1px;
+	border-right: 1px;
+
+	-webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0)) ) 0% 100%;
+	   /* AFAIK, not supported in moz/o yet */
+	   -moz-border-image: -moz-linear-gradient(top, rgba(255,255,255,.6), rgba(255,255,255,0)) 0 100%;
+	     -o-border-image: -moz-linear-gradient(top, rgba(255,255,255,.6), rgba(255,255,255,0)) 0 100%;
+	        border-image: -moz-linear-gradient(top, rgba(255,255,255,.6), rgba(255,255,255,0)) 0 100%;
+	
+	
+	background: -webkit-gradient(radial, center top, 300, center top, 0, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,.7))),
+				-webkit-gradient(linear, left top, left bottom, from(hsla(0,0%,100%,.2)), to(hsla(0,0%,100%,0)));
+	
+	background: -moz-radial-gradient(50% 0% 180deg, circle closest-corner, hsla(0,0%,100%,.7), hsla(0,0%,100%,0)),
+				-moz-linear-gradient(top, hsla(0,0%,100%,.2), hsla(0,0%,100%,0));
+
+	background: -o-radial-gradient(50% 0% 180deg, circle closest-corner, hsla(0,0%,100%,.7), hsla(0,0%,100%,0)),
+				-o-linear-gradient(top, hsla(0,0%,100%,.2), hsla(0,0%,100%,0));
+
+	background: radial-gradient(50% 0% 180deg, circle closest-corner, hsla(0,0%,100%,.7), hsla(0,0%,100%,0)),
+				linear-gradient(top, hsla(0,0%,100%,.2), hsla(0,0%,100%,0));
+
+
+	/* transition setup */
+	pointer-events: none;
+	opacity: 0;
+	
+	-webkit-transform: translateY(-100px);
+	   -moz-transform: translateY(-100px);
+	     -o-transform: translateY(-100px);
+	        transform: translateY(-100px);
+
+	-webkit-transition: -webkit-transform .6s cubic-bezier(.3, 0, 0, 1), opacity .6s cubic-bezier(.3, 0, 0, 1);
+	   -moz-transition:    -moz-transform .6s cubic-bezier(.3, 0, 0, 1), opacity .6s cubic-bezier(.3, 0, 0, 1);
+	     -o-transition:      -o-transform .6s cubic-bezier(.3, 0, 0, 1), opacity .6s cubic-bezier(.3, 0, 0, 1);
+	        transition:         transform .6s cubic-bezier(.3, 0, 0, 1), opacity .6s cubic-bezier(.3, 0, 0, 1);
+}
+
+
+
+
+article a { color: #4e72be; font-weight: bold; }
+article a:hover { opacity: 0.6; }
+article a:active {
+	position: relative;
+	top: 1px;
+	opacity: 0.3;
+	outline: none;
+}
+
+
+
+
+
+
+/* toggle */
+
+.toggle {
+	position: relative;
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	margin: 1px;
+	
+	background: -webkit-gradient(radial, center top, 300, center top, 120, from(hsla(0,0%,50%,0)), to(hsla(0,0%,100%,.6)));
+	background: -moz-radial-gradient(50% 0% 180deg, circle cover, hsla(0,0%,100%,.6) 50%, hsla(0,0%,80%,0) 100%);
+	background:   -o-radial-gradient(50% 0% 180deg, circle cover, hsla(0,0%,100%,.6) 50%, hsla(0,0%,80%,0) 100%);
+	background:      radial-gradient(50% 0% 180deg, circle cover, hsla(0,0%,100%,.6) 50%, hsla(0,0%,80%,0) 100%);
+	
+	-webkit-box-shadow: inset rgba(0,0,0,0.05) 0 -4px 5px, inset rgba(252,254,255,0.4) 0 4px 3px, rgba(0,0,0,0.1) 0 2px 1px;
+	   -moz-box-shadow: inset rgba(0,0,0,0.05) 0 -4px 5px, inset rgba(252,254,255,0.4) 0 4px 3px, rgba(0,0,0,0.1) 0 2px 1px;
+	     -o-box-shadow: inset rgba(0,0,0,0.05) 0 -4px 5px, inset rgba(252,254,255,0.4) 0 4px 3px, rgba(0,0,0,0.1) 0 2px 1px;
+	        box-shadow: inset rgba(0,0,0,0.05) 0 -4px 5px, inset rgba(252,254,255,0.4) 0 4px 3px, rgba(0,0,0,0.1) 0 2px 1px;
+	
+	
+	/* transition setup */
+	-webkit-transform: translateY(-60px);
+	   -moz-transform: translateY(-60px);
+	     -o-transform: translateY(-60px);
+	        transform: translateY(-60px);
+	
+	-webkit-transition: -webkit-transform .6s cubic-bezier(.3, 0, 0, 1);
+	   -moz-transition:    -moz-transform .6s cubic-bezier(.3, 0, 0, 1);
+	     -o-transition:      -o-transform .6s cubic-bezier(.3, 0, 0, 1);
+	        transition:         transform .6s cubic-bezier(.3, 0, 0, 1);
+}
+.toggle:hover {
+	padding: 1px;
+	margin: 0;
+}
+.toggle:active {
+	padding: 0px;
+	margin: 1px;
+	
+	background: -webkit-gradient(radial, center top, 300, center top, 120, from(hsla(0,0%,50%,0)), to(hsla(0,0%,100%,.3)));
+	background: -moz-radial-gradient(50% 0% 180deg, circle cover, hsla(0,0%,100%,.3) 50%, hsla(0,0%,80%,0) 100%);
+	background:   -o-radial-gradient(50% 0% 180deg, circle cover, hsla(0,0%,100%,.3) 50%, hsla(0,0%,80%,0) 100%);
+	background:      radial-gradient(50% 0% 180deg, circle cover, hsla(0,0%,100%,.3) 50%, hsla(0,0%,80%,0) 100%);
+}
+
+.toggle a {
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	
+	-webkit-transition: -webkit-transform .6s cubic-bezier(.3, 0, 0, 1);
+	   -moz-transition:    -moz-transform .6s cubic-bezier(.3, 0, 0, 1);
+	     -o-transition:      -o-transform .6s cubic-bezier(.3, 0, 0, 1);
+	        transition:         transform .6s cubic-bezier(.3, 0, 0, 1);
+}
+.toggle .top {
+	background: url(top.png) no-repeat;
+	
+	-webkit-transform: rotate(0deg);
+	   -moz-transform: rotate(0deg);
+	     -o-transform: rotate(0deg);
+	        transform: rotate(0deg);
+}
+.toggle .bot {
+	background: url(bot.png) no-repeat;
+	
+	-webkit-transform: rotate(180deg);
+	   -moz-transform: rotate(180deg);
+	     -o-transform: rotate(180deg);
+	        transform: rotate(180deg);
+}
+
+
+
+
+
+/* :target - this makes it possible to have different "states" */
+
+#box:target article {
+	pointer-events: auto;
+	opacity: 1;
+	
+	-webkit-transform: translateY(0);
+	   -moz-transform: translateY(0);
+	     -o-transform: translateY(0);
+	        transform: translateY(0);
+}
+#box:target .toggle {
+	-webkit-transform: translateY(0) scale(.8);
+	   -moz-transform: translateY(0) scale(.8);
+	     -o-transform: translateY(0) scale(.8);
+	        transform: translateY(0) scale(.8);
+}
+
+#box:target .toggle .top {
+	pointer-events: none;	/* this let's you click trough elements that are overlapping */
+	
+	-webkit-transform: rotate(180deg);
+	   -moz-transform: rotate(180deg);
+	     -o-transform: rotate(180deg);
+	        transform: rotate(180deg);
+}
+#box:target .toggle .bot {
+	-webkit-transform: rotate(0deg);
+	   -moz-transform: rotate(0deg);
+	     -o-transform: rotate(0deg);
+	        transform: rotate(0deg);
+}
+
+
+
+
+/* simurai */
+
+#simurai {
+	width: 100px;
+	height: 300px;
+	position: fixed;
+	z-index: 88;
+	bottom: 60px;
+	right: 40px;
+	opacity: 0.06;
+	
+	-webkit-transition: opacity .2s ease-out;
+	   -moz-transition: opacity .2s ease-out;
+	     -o-transition: opacity .2s ease-out;
+	        transition: opacity .2s ease-out;
+}
+#simurai:hover {
+	opacity: 1;
+}

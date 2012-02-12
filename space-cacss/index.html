@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Space CaCSS - Animated CSS3 background patterns</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="cacss.css"/>
+    <link rel="stylesheet" href="cacss-prefixes.css"/>
+</head>
+<body>
+	
+	<section>
+	
+		<!-- Uncomment below and hop over to cacss.css -->
+		<!--<div class="yourClass"></div>-->
+		
+		<div class="particle"></div>
+		<div class="cells"></div>
+		<div class="jelly"></div>
+		<div class="blobbs"></div>
+		<div class="chase"></div>
+	
+	</section>
+	
+	
+	<footer>
+		<article>
+			<h1>Space CaCSS</h1>
+			<h2>Animated CSS3 background patterns</h2>
+			
+			<p><strong>How does it work?</strong> The basic technique is to use a CSS3 <strong>repeating-radial-gradient</strong> as a background and animate it by changing its <strong>background-size</strong>. That's all what's needed in the second example. Pretty hypnotic. If you want more variations you can use a second gradient with a different background-size. Or add a second animation for the <strong>background-position</strong> with a different timing. That makes it possible to create a somewhat random looking motion like in the last example (orange).</p>
+			
+			<p>You could also add some extra markup and use transforms like rotate, scale or so to make even more trippy effects, but for now I just kept it to background-size and position.</p>
+			
+			<p>Something to keep in mind: Animating the whole background of a page is not that great of an idea. First it would be waaaay too distracting, then CPU usage is quite high especially if it's a large area and using Canvas would probably be a better option. Also it doesn't work in all browsers. But considering how little code is needed (most is just vendor prefixes) to create those animated patterns, it's super fun to play with. So if you feel like trying it out or you wanna <strong>contribute</strong> your Space CaCSS creations, head over to <a href="https://github.com/simurai/space-cacss/">github</a>.</p>
+			
+			<p>Made by <a href="http://simurai.com">simurai</a></p>
+			
+			<p><a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="simurai">Tweet</a></p>
+		</article>
+		
+		
+	</footer>
+	
+	<a href="https://github.com/simurai/space-cacss/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/bec6c51521dcc8148146135149fe06a9cc737577/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+		
+
+
+<!-- Twitter -->
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+
+<!-- Google -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-599923-1']);
+  _gaq.push(['_setDomainName', 'simurai.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><!--/ Google -->
+
+		
+</body>
+</html>

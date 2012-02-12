@@ -1,0 +1,130 @@
+
+/* Zeppelin by simurai.com  */
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:bold);
+
+html {
+	font: 62.5%/1 "Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
+	background-color: #cfd6da;
+	background: url(cloud_tl.png) no-repeat fixed left top,
+				url(cloud_br.png) no-repeat fixed right bottom, 
+				#cfd6da url(bg.jpg) no-repeat fixed center top;
+}
+#wrapper {
+	margin-top: 100px;
+	padding: 30px 0;
+	text-align: center;
+	height: 23em;
+}
+
+#cloud {
+	position: absolute;
+	left: 60%;
+	z-index: 10;
+	top: -20px;
+}
+
+/* here it gets interesting */
+ 
+#wrapper:hover #text, #wrapper:hover #zeppelin {
+	-webkit-animation: img-animation 20s 1 ease-in-out;
+}
+    
+#text, #zeppelin {
+	position: absolute; 
+    width: 100%;
+    height: 220px;
+    display: block;
+    background: url(zeppelin.png) no-repeat center center;
+}  
+#text {
+	font: 20em 'Droid Sans', sans-serif;
+	text-transform: uppercase;
+	color: transparent;
+	text-shadow: 	rgba(245,245,255,0.35) 0 0px 0px,
+					rgba(0,0,30,0.08) 0px 0.05em 0.05em;
+	
+	z-index: 1;
+	background: -webkit-gradient(
+					linear, 0% 0%, 0.5% 58%, 
+					from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) ), 
+					color-stop(0.75, rgba(255,255,255,0) ), color-stop(0.98, rgba(255,255,255,0.6) )
+				),
+				url(zeppelin.png) no-repeat center center;
+	-webkit-text-stroke: 5px rgba(255,255,255,0.07);
+	-webkit-background-clip: text;	
+}
+#zeppelin {
+	-webkit-transform: scaleY(.93) scaleX(.98);
+}
+
+@-webkit-keyframes img-animation {
+	0% { 	background-position: center, center; }
+	25% { 	background-position: left, left; }
+	75% { 	background-position: right, right; }
+	100% { 	background-position: center, center; }
+}
+
+#text:focus {
+	outline: none;
+}
+
+
+
+
+/* below just the usual stuff */
+
+strong {
+	font-weight: bold;
+	color: #000;
+}
+
+#meta {
+	color: #777;
+	font-size: 1.2em;
+	margin: 30px 0;
+	text-align: center;
+	text-shadow: rgba(255,255,255,0.5) 0 1px 0;
+	line-height: 1.4em;
+} 
+#meta p {
+	margin-bottom: 15px;
+}
+#meta a {
+	text-decoration: none;
+	color: #7276ff;
+}
+#meta a:hover {
+	color: rgba(114,118,255,0.5);
+}
+
+
+#simurai {
+	width: 100px;
+	height: 300px;
+	position: fixed;
+	z-index: 88;
+	bottom: 60px;
+	right: 40px;
+	opacity: 0.05;
+}
+#simurai:hover {
+	opacity: 1;
+}
+
+
+/* Love */
+
+#love {
+	padding: 10px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset rgba(0,0,0,0.15) 0 1px 2px;
+	border-radius: 0 10px 0 0;
+	opacity: .33;
+}
+#love:hover { opacity: 1; }
+#love * { padding-right: 10px; }
+#love *:last-child { padding-right: 2px; }

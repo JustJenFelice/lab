@@ -1,0 +1,96 @@
+
+/* The Cursor Monster by simurai */
+
+
+/* globals */
+
+@import url(http://fonts.googleapis.com/css?family=Slackey);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
+
+html {
+	font:62.5%/1 "Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	background: #d9e4f1 url(bg.jpg) no-repeat center center;
+}
+html, body {
+	height: 100%;
+}
+body {
+	text-align: center;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a { text-decoration: none; }
+a:active { outline: none; }
+
+
+p, ul {
+	font-size: 1.2em;
+	color: #555;
+	margin-bottom: .8em;
+	line-height: 1.3em;
+}
+code {
+	font-size: 1.3em;
+	color: #888;
+}
+
+
+/* header */
+
+header {
+	text-align: center;
+	padding-top: 80px;
+}
+h1 {
+	display: inline-block;
+	text-transform: uppercase;
+	text-shadow: rgba(255,255,255,0.6) 0 1px 0, rgba(0,0,0,0.2) 0 .15em .25em;
+	font: 3.5em/1.3em "Slackey", "Droid Sans", sans-serif;
+}
+h1 span {
+	display: block;
+	font-size: 1.25em;
+}
+
+
+
+/* article */
+
+article {
+	position: absolute;
+	max-width: 400px;
+	bottom: 0; left: 0; right: 0;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	
+	text-align: left;
+	text-shadow: hsla(0,0%,100%,.5) 0 1px 0;
+	
+}
+article a { color: #4e72be; font-weight: bold; }
+article a:hover { opacity: 0.6; }
+article a:active {
+	position: relative;
+	top: 1px;
+	opacity: 0.3;
+	outline: none;
+}
+
+
+
+
+
+@media only screen and (max-width: 480px) {
+	
+	body {
+		-webkit-text-size-adjust: 100%; 
+	}
+	
+	article {
+		padding: 20px;
+	}
+	
+}

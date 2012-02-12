@@ -1,0 +1,111 @@
+/* @override http://lab.simurai.com/css/iloveblur/style.css */
+
+/* I♥BLUR by simurai.com  */
+
+html {
+	background-color: #41647e;
+	background-image: url(bg.png);
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+#box {
+	background-color: #6fa8d0;
+	background-image: url(bg.png);
+	padding: 80px 100px;
+	text-align: center;
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+	width: 500px;
+	-webkit-border-radius: 20px;
+	font-size: 5em;
+	font-weight: bold;
+	margin: 80px auto 20px;
+}
+
+/* The interesting part */
+
+.txt {
+	color: transparent;
+	text-shadow: #fff 0 0 100px;
+	-webkit-transition: text-shadow 2s cubic-bezier(0, 1, 0, 1);
+}
+#box:hover .txt {
+	text-shadow: #fff 0 0 5px;
+	-webkit-transition: text-shadow 1s cubic-bezier(0, 0.75, 0, 1);
+}
+
+.heart {
+	margin: 0 10px;
+	color: transparent;
+	text-shadow: red 0 0 8px;
+	-webkit-transition: text-shadow 1s cubic-bezier(0, 1, 0, 1);
+	
+	-webkit-animation-name: pulse-animation;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes pulse-animation {
+	0% { opacity: 1; }
+	50% { opacity: 0.8; }
+	100% { opacity: 1; }
+}
+#box:hover .heart {
+	margin: 0 5px;
+	text-shadow: red 0 0 100px;
+	-webkit-transition: text-shadow 2s cubic-bezier(0, 0.75, 0, 1);
+}
+
+#box span:nth-child(3):focus {
+	outline: none;
+}
+
+
+/* below just the usual stuff */
+
+#meta {
+	font-size: 0.8em;
+	margin-bottom: 80px;
+	text-align: center;
+	color: rgba(255,255,255,0.3);
+} 
+#meta p {
+	margin-bottom: 10px;
+}
+#meta a {
+	text-decoration: none;
+	color: #7276ff;
+}
+#meta a:hover {
+	color: rgba(114,118,255,0.5);
+}
+
+
+#simurai {
+	width: 100px;
+	height: 300px;
+	position: fixed;
+	z-index: 88;
+	bottom: 60px;
+	right: 40px;
+	opacity: 0.1;
+}
+#simurai:hover {
+	opacity: 1;
+}
+
+
+/* Love */
+
+#love {
+	padding: 10px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset rgba(0,0,0,0.15) 0 1px 2px;
+	border-radius: 0 10px 0 0;
+	opacity: .33;
+}
+#love:hover { opacity: 1; }
+#love * { padding-right: 10px; }
+#love *:last-child { padding-right: 2px; }

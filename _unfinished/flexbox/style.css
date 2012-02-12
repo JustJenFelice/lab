@@ -1,0 +1,95 @@
+
+/* globals */
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
+
+html {
+	font:13px/1 "Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	color: hsl(0,0%,20%);
+	background-color: hsl(0,0%,85%);
+}
+
+body {
+	margin: 50px;
+}
+
+span {
+	color: hsla(0,0%,0%,.3);
+	font-size: 10px;
+}
+
+h1 {
+	font-size: 16px;
+	margin: 0;
+}
+
+
+
+/* body ------------------------- */
+
+.body {
+	position: relative;
+	width: 250px;
+	height: 150px;
+	background-color: hsl(0,0%,100%);
+	padding: 8px;
+	margin-bottom: 50px;
+	
+	display: -webkit-box;
+	
+	resize: both; overflow: auto;
+}
+
+
+/* global ------------------------- */
+
+header, section, footer, aside {
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+}
+
+aside {
+	max-width: 75%;
+}
+
+
+/* Layout classes ------------------------- */
+
+.flexible.vertical > * {
+	width: 100%;
+}
+
+.vertical {
+	-webkit-box-orient: vertical;
+}
+
+
+.horizontal .resizable {
+	resize: horizontal; overflow: auto;
+}
+.vertical .resizable {
+	resize: vertical; overflow: auto;
+}
+
+
+.flexible {
+	-webkit-box-flex: 1;
+	background-color: hsla(100,100%,80%,.5);
+}
+.fixed {
+	background-color: hsla(0,100%,80%,.5);
+}
+
+.justified {
+	-webkit-box-pack: justify;
+}
+
+.resizable {
+	background-color: hsla(220,100%,80%,.5);
+}
+
+
+

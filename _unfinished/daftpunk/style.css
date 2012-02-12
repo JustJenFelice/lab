@@ -1,0 +1,72 @@
+
+html {
+	font: 62.5%/1 "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+
+#controlls {
+	position: absolute;
+	top:  50px;
+	left: 50px;
+}
+#switch {
+	font-size: 1.5em;
+	width: 100px;
+	cursor: pointer;
+}
+
+
+body {
+	text-align: center;
+}
+
+#matrix {
+	margin: 105px auto;
+	padding: 0 50px;
+}
+
+#matrix .row {
+	white-space: nowrap;
+}
+#matrix .row:nth-child(4n) {
+	margin-bottom: 20px;
+}
+
+
+#matrix span {
+	display: inline-block;		
+	width: 25px;
+	height: 50px;
+	margin-left: 5px;
+	background: url(img/daftpunk.png) no-repeat 0;
+	cursor: crosshair;
+}
+
+#matrix span:hover {
+	opacity: .5;
+}
+
+
+.row span:nth-child(4n) {
+	margin-right: 20px;
+}
+#matrix .row:nth-child(5) span,
+#matrix .row:nth-child(6) span,
+#matrix .row:nth-child(7) span,
+#matrix .row:nth-child(8) span
+{
+	background: url(img/daftpunk_beat.png) no-repeat 0;
+}
+
+
+
+
+#debug {
+	position: absolute;
+	min-width: 20px;
+	top:  0;
+	left: 0;
+	background-color: rgba(0,0,0,0.8);
+	padding: 10px;
+	color: #fff;
+}

@@ -1,0 +1,109 @@
+
+/* FLASH-LIGHT by simurai.com  */
+
+html {
+	font-family: Geneva, sans-serif;
+	background: #141414 url(bg.jpg) no-repeat;
+}
+#wrapper {
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	text-align: center;
+}
+#box {
+	padding: 80px 100px;
+	text-align: center;
+	width: 8em;
+	font-size: 3em;
+	font-weight: bold;
+	-webkit-border-radius: 100px; 
+	-webkit-box-shadow: 0 -1px 1px rgba(255,255,255,0.1), 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* The interesting part */
+
+#flashlight {
+	color: transparent;
+	-webkit-perspective: 80;
+}
+#flashlight:focus {
+	outline: none;
+}
+
+#flash {
+	display: inline-block;
+	text-shadow: #bbb 0 0 1px, #fff 0 -1px 2px, #fff 0 -3px 2px, rgba(0,0,0,0.8) 0 30px 25px;
+	-webkit-transition: margin-left 0.3s cubic-bezier(0, 1, 0, 1);
+}
+#box:hover #flash {
+	margin-left: 20px;
+	-webkit-transition: margin-left 1s cubic-bezier(0, 0.75, 0, 1);
+}
+
+
+#light {
+	display: inline-block;
+	text-shadow: #000 0 0 1px, rgba(255,255,255,0.1) 0 0 15px;
+}
+#box:hover #light {
+	text-shadow: #fff 0 0 4px, #fcffbb 0 0 30px;
+	-webkit-transform: rotateY(-70deg);
+	-webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0.75, 0, 1),
+						text-shadow 0.1s ease-out;
+}
+
+
+
+/* below just the usual stuff */
+
+strong {
+	font-weight: bold;
+	color: rgba(255,255,255,0.4);
+}
+
+#meta {
+	font-size: 0.7em;
+	margin: 30px 0 80px;
+	text-align: center;
+	color: rgba(255,255,255,0.3);
+} 
+#meta p { margin-bottom: 10px; }
+#meta a {
+	text-decoration: none;
+	color: #7276ff;
+}
+#meta a:hover {
+	color: rgba(114,118,255,0.5);
+}
+
+
+#simurai {
+	width: 100px;
+	height: 300px;
+	position: fixed;
+	z-index: 88;
+	bottom: 60px;
+	right: 40px;
+	opacity: 0.1;
+}
+#simurai:hover {
+	opacity: 1;
+}
+
+
+/* Love */
+
+#love {
+	padding: 10px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset rgba(0,0,0,0.15) 0 1px 2px;
+	border-radius: 0 10px 0 0;
+	opacity: .33;
+}
+#love:hover { opacity: 1; }
+#love * { padding-right: 10px; }
+#love *:last-child { padding-right: 2px; }

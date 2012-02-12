@@ -1,0 +1,99 @@
+/* @override http://lab.simurai.com/css/carveme/style.css */
+
+/* CarveMe by simurai.com  */
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:bold);
+
+html {
+	background: url("http://files.simurai.com/tumblr/img/bg.gif") repeat fixed 0 0 transparent;
+	font: 62.5%/1 "Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
+}
+#wrapper {
+	padding: 150px 50px;
+	text-align: center;
+	background: transparent url(http://files.simurai.com/tumblr/img/bg_glow.png) no-repeat fixed center top;
+}
+
+
+/* here it gets interesting */
+
+#text {
+	font: bold 12em 'Droid Sans', sans-serif;
+		
+	color: transparent;
+	-webkit-text-stroke: 1px rgba(0,0,0,0.2);
+}
+#text:hover {
+	-webkit-text-stroke: 0;
+	
+	color: transparent;
+	-webkit-background-clip: text;
+	background-color: rgba(82,96,117,0.5);
+	text-shadow: rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+
+	-webkit-transition: text-shadow .1s ease-out,
+						background-color .2s ease-out;
+}
+#text:focus {
+	outline: none;
+}
+
+
+
+
+/* below just the usual stuff */
+
+strong {
+	font-weight: bold;
+	color: #000;
+}
+
+#meta {
+	color: #777;
+	font-size: 1.2em;
+	margin: 30px 0;
+	text-align: center;
+	text-shadow: rgba(255,255,255,0.5) 0 1px 0;
+} 
+#meta p {
+	margin-bottom: 10px;
+}
+#meta a {
+	text-decoration: none;
+	color: #7276ff;
+}
+#meta a:hover {
+	color: rgba(114,118,255,0.5);
+}
+
+
+#simurai {
+	width: 100px;
+	height: 300px;
+	position: fixed;
+	z-index: 88;
+	bottom: 60px;
+	right: 40px;
+	opacity: 0.1;
+}
+#simurai:hover {
+	opacity: 1;
+}
+
+
+/* Love */
+
+#love {
+	padding: 10px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.3);
+	-webkit-box-shadow: inset rgba(0,0,0,0.15) 0 1px 2px;
+	border-radius: 0 10px 0 0;
+	opacity: .33;
+}
+#love:hover { opacity: 1; }
+#love * { padding-right: 10px; }
+#love *:last-child { padding-right: 2px; }
+

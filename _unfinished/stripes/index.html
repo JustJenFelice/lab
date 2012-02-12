@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	
+	<title>CSS3 stripes on text and checkbox</title>
+	<meta name="author" content="simurai">
+	
+	<link rel="stylesheet" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="checkbox.css"/>
+    
+    <script src="http://code.jquery.com/jquery-1.5.js"></script>    
+    <script src="http://yui.yahooapis.com/3.3.0/build/yui/yui.js"></script>
+	<script>
+		$(document).ready(function () {
+			
+			// Yep, UA sniffing is bad, but "background-clip: text" is so exotic, not even modernizr checks for it.
+	    	var Y = YUI();
+	    	if (!Y.UA.webkit) {
+	    		$("#demo").html( '<img src="screenshot.gif" alt="demo" /><br />Only works in webkit, above an animated gif instead.' );
+	    		$("#demo").css({ "padding":"0", "font-size":"1.5em", "line-height":"2em" });
+	    		
+	    		$("article h1").css("color", "#000");
+	    	}
+		});
+  	</script>
+    
+</head>
+
+
+<body>
+	
+	
+	<div id="demo">
+				
+		<input class="default" type="checkbox" checked /> <span class="arrow">&rarr;</span>
+		
+		<input class="striped" type="checkbox" checked data-icon-Y="&#10004;" data-icon-N="&#10008;" />
+	
+	</div>
+	
+
+	<article>
+
+		<h1>Why keep it <strong>simple</strong> if it could be <strong>complicated</strong>?</h1>
+				
+	</article>
+
+
+
+
+
+<!-- Google -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-599923-1']);
+  _gaq.push(['_setDomainName', 'simurai.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><!--/ Google -->
+
+	
+
+</body>
+
+</html>
