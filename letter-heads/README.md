@@ -1,6 +1,3 @@
-The Letter-Heads
-=============
+![Screenshot](http://lab.simurai.com/letter-heads/screenshot.jpg)
 
-An interactive shadow art demo.
-
-![The Letter-Heads](https://github.com/simurai/shadows/raw/master/screenshot.jpg)
+[lab.simurai.com/letter-heads](http://lab.simurai.com/letter-heads)

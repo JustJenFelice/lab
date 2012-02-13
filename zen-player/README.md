@@ -1,3 +1,3 @@
 ![Screenshot](http://lab.simurai.com/zen-player/screenshot.jpg)
 
-http://lab.simurai.com/zen-player
+[lab.simurai.com/zen-player](http://lab.simurai.com/zen-player)
