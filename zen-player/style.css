@@ -1,0 +1,135 @@
+
+/* 
+	
+	Just the page style, if you're looking for the player, see zen.css
+
+*/
+
+
+/* globals */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
+
+html {
+	font:62.5%/1 "Droid Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	background: #f0f0f0 url(img/bg.png);
+}
+
+body {
+	max-width: 520px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a { text-decoration: none; }
+a:active { outline: none; }
+
+h1, h2 {
+	display: inline-block;
+	font-family: "Lato", "Droid Sans", sans-serif;
+	text-shadow: rgba(255,255,255,0.6) 0 1px 0, rgba(0,0,0,0.2) 0 .15em .25em;
+}
+h1 {
+	font-size: 4.6em;
+}
+h2 {
+	font-size: 2.4em;
+	margin-bottom: 1em;
+	color: #999;
+	margin-left: 12px;
+}
+
+p, ul {
+	font-size: 1.3em;
+	color: #333;
+	margin-bottom: 1em;
+	line-height: 1.6em;
+}
+li {
+	margin-bottom: 10px;
+	margin-left: 24px;
+	list-style-type: square;
+}
+del {
+	text-decoration: line-through;
+}
+
+
+
+
+
+
+/* article */
+
+article {
+	position: relative;
+	padding: 50px 60px 40px 60px;
+	
+	text-shadow: hsla(0,0%,100%,.7) 0 1px 0;
+	text-align: left;
+	
+	border: 0;
+	border-left: 1px;
+	border-right: 1px;
+	
+	border-radius: 10px;	
+	
+	background: -webkit-gradient(radial, center top, 300, center top, 0, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,.7))),
+				-webkit-gradient(linear, left top, left bottom, from(hsla(0,0%,100%,.2)), to(hsla(0,0%,100%,0)));
+	
+	background: -moz-radial-gradient(50% 0% 180deg, circle closest-corner, hsla(0,0%,100%,.7), hsla(0,0%,100%,0)),
+				-moz-linear-gradient(top, hsla(0,0%,100%,.2), hsla(0,0%,100%,0));
+
+	background: -o-radial-gradient(50% 0% 180deg, circle closest-corner, hsla(0,0%,100%,.7), hsla(0,0%,100%,0)),
+				-o-linear-gradient(top, hsla(0,0%,100%,.2), hsla(0,0%,100%,0));
+
+	background: radial-gradient(50% 0% 180deg, circle closest-corner, hsla(0,0%,100%,.7), hsla(0,0%,100%,0)),
+				linear-gradient(top, hsla(0,0%,100%,.2), hsla(0,0%,100%,0));
+
+}
+
+
+
+
+article a { color: #4e72be; font-weight: bold; }
+article a:hover { opacity: 0.6; }
+article a:active {
+	position: relative;
+	top: 1px;
+	opacity: 0.3;
+	outline: none;
+}
+
+
+/* player */
+
+#zen {
+	margin: 150px 0;
+}
+
+
+
+/* Mobile - from Less Framework 3 by Joni Korpi http://lessframework.com  */
+
+
+@media only screen and (max-width: 480px) {
+	
+	body {
+		/* Prevents Mobile Safari from bumping up font sizes in landscape */
+		-webkit-text-size-adjust: 100%; 
+	}
+	
+	article {
+		padding: 20px;
+	}
+	
+}
+
+
+
+
